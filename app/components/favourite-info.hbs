@@ -1,0 +1,16 @@
+<div class="favourite-info">
+  <button type="button" class="back-button" {{on "click" this.click}}>❮</button>
+  <p class="favourite-info-name">{{@name}}</p>
+  <img src={{@image_url}} style={{this.dimensions}}><br>
+  <a class="favourite-link" href={{@url}} target="_blank" rel="noopener noreferrer">
+    Open in Spotify
+  </a>
+  <br>
+  <button type="button" name="button" class="play-fav-info" {{on "click" this.play}}>Play</button>
+  <div class="favourite-top-artists">
+    <h3 class="favourite-artists-headline">Top artists:</h3>
+    {{#each @artists as |artist|}}
+      <FavouriteTopArtist @name={{artist.name}} @url={{artist.url}} />
+    {{/each}}
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.main-menu {
+  position: fixed;
+  display: table-cell;
+  padding-right: 2em;
+  padding-left: 1em;
+}
+
+.menu-button {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em 0.5em;
+  margin-top: 0.75em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #e4e6dc;
+  transition: all ease 200ms;
+}
+
+.menu-button:hover {
+  background-color: #296066;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.login-text {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+  color: #e4e6dc;
+}

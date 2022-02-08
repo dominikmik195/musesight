@@ -1,0 +1,16 @@
+{{page-title "Artists"}}
+
+<div class="search-items">
+  <label for="artists-search">Search artists: </label>
+  <input type="text" name="artists-search" id="artists-search" value={{this.searchFrase}} {{on "input" this.updateSearchFrase}}>
+</div>
+
+<div class="artists-list">
+  {{#each this.foundArtists as |artist|}}
+      <Artist @name={{artist.name}} @url={{artist.url}} @list={{artist.genres}} @id={{artist.id}} @name_id={{artist.name_id}}/>
+  {{/each}}
+</div>
+
+<div class="itemview" id="itemview">
+  {{outlet}}
+</div>

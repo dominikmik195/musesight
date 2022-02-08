@@ -1,0 +1,27 @@
+.user {
+  position: absolute;
+  bottom: 0.75em;
+  left: 0.75em;
+  right: 0.75em;
+}
+
+.login-button {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em 0.5em;
+  margin-top: 0.75em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #e4e6dc;
+  transition: all ease 200ms;
+  border: none;
+  background-color: inherit;
+  text-align: left;
+}
+
+.login-button:hover {
+  background-color: #296066;
+  cursor: pointer;
+  transform: scale(1.05);
+}

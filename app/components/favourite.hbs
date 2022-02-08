@@ -1,0 +1,14 @@
+<LinkTo class="favourite" @route="favourites.favourite" @model={{@id}} {{on "click" this.click}}>
+  <div class="row-1">
+    <div class="track-name">
+      {{@name}}
+    </div>
+    <div class="track-data">
+      {{this.duration}}
+    </div>
+    <button type="button" name="button" class="play-favourite" {{on "click" this.play}}><img src="assets/images/play-icon.png" height=50 width=50 /></button>
+  </div>
+  <div class="row-2">
+    {{this.artistsNames}}
+  </div>
+</LinkTo>

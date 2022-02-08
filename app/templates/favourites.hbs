@@ -1,0 +1,16 @@
+{{page-title "Favourites"}}
+
+<div class="search-items">
+  <label for="favourites-search">Search tracks: </label>
+  <input type="text" name="favourites-search" id="favourites-search" value={{this.searchFrase}} {{on "input" this.updateSearchFrase}}>
+</div>
+
+<div class="favourites-list">
+  {{#each this.foundTracks as |fav|}}
+  <Favourite @name={{fav.name}} @url={{fav.url}} @duration_ms={{fav.duration_ms}} @artists={{fav.artists}} @id={{fav.id}} @uri={{fav.uri}}/>
+  {{/each}}
+</div>
+
+<div class="favourite-item-view" id="favourite-item-view">
+  {{outlet}}
+</div>

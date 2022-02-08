@@ -1,0 +1,13 @@
+{{page-title "Recommendations"}}
+
+{{#each
+  (array
+    (hash title="Romeo and Juliet" composer="Sergei Prokofiev" year=1935 rating=9)
+    (hash title="Spartacus" composer="Aram Khachaturian" year=1954 rating=10)
+    (hash title="Swan Lake" composer="Pyotr Ilyich Tchaikovsky" year=1876 rating=8)
+  ) as |recommendation|
+}}
+    <Recommendation @title={{recommendation.title}} @composer={{recommendation.composer}} @year={{recommendation.year}} @rating={{recommendation.rating}}/>
+{{/each}}
+
+{{outlet}}

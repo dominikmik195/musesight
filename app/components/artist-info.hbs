@@ -1,0 +1,19 @@
+<div class="artist-info">
+  <button type="button" class="back-button" {{on "click" this.click}}>❮</button>
+  <p class="artist-info-name">{{@name}}</p>
+  <img src={{@image_url}} style={{this.dimensions}}><br>
+  <div class="genres-list">
+    {{#each @list as |genre|}}
+    {{genre}} <br>
+    {{/each}}
+  </div>
+  <a class="artist-link" href={{@url}} target="_blank" rel="noopener noreferrer">
+    Open in Spotify
+  </a>
+  <div class="artist-top-tracks">
+    <h3 class="artist-tracks-headline">Top tracks:</h3>
+    {{#each @tracks as |track|}}
+      <ArtistTopTrack @name={{track.name}} @url={{track.url}} /><br>
+    {{/each}}
+  </div>
+</div>

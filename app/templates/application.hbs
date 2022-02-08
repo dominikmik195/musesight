@@ -1,7 +1,24 @@
-{{page-title "HelloWorld"}}
-
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+{{page-title "Home"}}
+<script src="https://sdk.scdn.co/spotify-player.js"></script>
+<div class="main-screen">
+  <div class="left-side">
+    <div class="main-menu">
+      <div class="title">
+        MuseSight
+      </div>
+      <LinkTo class="menu-button" @route="favourites" {{on "click" this.menuButtonClick}}> Favourites </LinkTo> <br>
+      <LinkTo class="menu-button" @route="artists" {{on "click" this.menuButtonClick}}> Artists </LinkTo> <br>
+      <LinkTo class="menu-button" @route="about" {{on "click" this.menuButtonClick}}> About </LinkTo> <br>
+      <LinkTo class="menu-button" @route="insights" {{on "click" this.menuButtonClick}}> Insights </LinkTo> <br>
+    </div>
+    <div class="user">
+      <User />
+    </div>
+  </div>
+  <div class="on-show">
+    {{outlet}}
+    <div class="footer">
+      <Player />
+    </div>
+  </div>
+</div>

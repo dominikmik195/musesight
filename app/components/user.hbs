@@ -1,0 +1,16 @@
+{{#if this.exists}}
+  <p class='login-text'><a href={{this.url}} target="_blank" rel="noopener noreferrer"><img id="spotify-icon" src="assets/images/Spotify_Icon_RGB_Black.png" onmouseover="hover(this);" onmouseout="unhover(this);" alt="spotify icon" width=25 height=25></a> Logged in as <i>{{this.username}}</i></p>
+  <LinkTo class="login-button" @route="index" {{on "click" this.logout}}>Logout</LinkTo>
+{{else}}
+  <button type="button" class="login-button" {{on "click" this.login}}>Login</button>
+{{/if}}
+
+<script type="text/javascript">
+  function hover(element) {
+    element.setAttribute('src', "assets/images/Spotify_Icon_RGB_White.png");
+  }
+
+  function unhover(element) {
+    element.setAttribute('src', "assets/images/Spotify_Icon_RGB_Black.png");
+  }
+</script>
