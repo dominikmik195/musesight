@@ -11,7 +11,7 @@ export default class CallbackRoute extends Route {
     var _code = window.location.toString().substring(1).split('=')[1];
     const tokenEndpoint = 'https://accounts.spotify.com/api/token';
     const clientId = 'fda700d134004653b725b039d9001964';
-    const clientSecret = '0e794fa142b1452bb92bf08779713852';
+    const clientSecret = 'secret';
     const redirectUri = 'http://localhost:4200/callback';
     let response = await fetch(
       `${tokenEndpoint}?grant_type=authorization_code&code=${_code}&redirect_uri=${redirectUri}`,
