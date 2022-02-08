@@ -36,14 +36,17 @@ export default class InsightsChartComponent extends Component {
   };
 
   get options() {
-    if (this.args.type == 1) return chartOptions;
-    return chartOptions2;
+    if (this.args.type == 1) return this.chartOptions;
+    else return this.chartOptions2;
   }
 
   get chartData() {
     var things;
     if (this.args.type == 1) things = this.args.info[0];
-    else things = this.args.info[1];
+    else things = this.args.info[1].slice(0, 10).reduce(function(map, obj) {
+      map[obj.name] = obj.count;
+      return map;
+    }, {});
     var genresInfo = [];
     Object.keys(things).forEach(function (key) {
       genresInfo.push({

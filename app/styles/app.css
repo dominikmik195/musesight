@@ -120,3 +120,15 @@ body {
   cursor: pointer;
   transition: all ease 300ms;
 }
+
+.about {
+  padding: 1em;
+  font-size: large;
+  font-weight: 400;
+}
+
+.about-bottom {
+  position: absolute;
+  margin-left: 1em;
+  bottom: 5em;
+}

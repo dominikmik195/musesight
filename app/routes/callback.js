@@ -45,7 +45,7 @@ export default class CallbackRoute extends Route {
     window.onSpotifyWebPlaybackSDKReady = () => {
       const token = this.user.access_token;
       const player = new Spotify.Player({
-        name: 'Web Playback SDK Quick Start Player',
+        name: 'MuseSight Playback',
         getOAuthToken: (cb) => {
           cb(token);
         },
@@ -82,6 +82,6 @@ export default class CallbackRoute extends Route {
 
       player.connect();
     };
-    this.transitionTo('recommendations');
+    this.transitionTo('favourites');
   }
 }

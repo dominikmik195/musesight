@@ -70,14 +70,13 @@
 }
 
 .artist-info {
-  border-style: solid;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  background-color: #120d00;
+  background: linear-gradient(0deg, rgba(63,85,85,1) 0%, rgba(3,35,36,1) 20%, rgba(3,35,36,1) 100%);
+  height: 83%;
   padding: 1.5em;
   text-align: right;
   position: absolute;
   right: 1em;
+  overflow-y: auto;
 }
 
 .genres-list {
@@ -100,8 +99,7 @@
 }
 
 .artist-link:hover {
-  background-color: #e4e6dc;
-  color: black;
+  background-color: #133436;
 }
 
 .artist-info-name {
@@ -111,24 +109,24 @@
   font-weight: bold;
 }
 
-.artist-top.tracks {
-}
-
 .artist-top-track {
-  width: 95%;
-  display: inline-block;
-  margin-right: -0.3em;;
+  width: 100%;
+  display: block;
   text-decoration: none;
   color: #e4e6dc;
-  border-radius: 1em;
-  padding: 0.3em 0.5em 0.3em 0.5em;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: #133436;
+  text-align: center;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
   transition: all ease 300ms;
+  margin-top: -0.6em;
+  margin-bottom: -0.9em;
 }
 
 .artist-top-track:hover {
-  background-color: #e4e6dc;
-  color: black;
-  transform: scale(1.05);
+  background-color: #133436;
 }
 
 .artist-tracks-headline {

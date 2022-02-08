@@ -41,41 +41,26 @@ export default class InsightsRoute extends Route {
       genres[key] *= 100 / count;
     });
 
-    let json2 = await apiCall(
+    let jsonTracks = await apiCall(
       'https://api.spotify.com/v1/me/top/tracks',
       'GET',
       this.user.get_access_token(),
       50
     );
-    if (json2.error != null && json2.error.status == 401) {
+    if (jsonTracks.error != null && jsonTracks.error.status == 401) {
       this.transitionTo('not-logged-in');
     }
-    let artists = {};
-    for (let datum of json2.items) {
+    let artists = [];
+    for (let datum of jsonTracks.items) {
       for (let artist of datum.artists) {
-        if (artist.name in artists) artists[artist.name] += 1;
-        else artists[artist.name] = 1;
+        var index = artists.findIndex(a => a.name == artist.name);
+        if (index > -1) artists[index].count += 1;
+        else artists.push({name: artist.name, count: 1});
       }
     }
+    artists.sort(function(artist1, artist2) {
+      return artist2.count - artist1.count;
+    });
     return [genres, artists];
-  }
-
-  chartOptions() {
-    return {
-      chart: {
-        type: 'bar',
-      },
-      title: {
-        text: 'Fruit Consumption',
-      },
-      xAxis: {
-        categories: ['Apples', 'Bananas', 'Oranges'],
-      },
-      yAxis: {
-        title: {
-          text: 'Fruit eaten',
-        },
-      },
-    };
   }
 }
