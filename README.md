@@ -1,4 +1,4 @@
-# diplomski_rad
+# Diplomski rad - MuseSight
 
 1. Instalirati Node.js preko stranice https://nodejs.org (paziti da se uz node instalira i npm)
 2. Instalirati yarn naredbom u terminalu: `npm install --global yarn`
